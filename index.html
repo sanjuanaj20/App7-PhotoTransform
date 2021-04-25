@@ -148,22 +148,6 @@
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("New Image", 10, 20);
-        var imageX = 69;
-        var imageY = 50;
-        var imageWidth = imageObj.width;
-        var imageHeight = imageObj.height;
-
-        context.drawImage(imageObj, imageX, imageY);
-
-        var imageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
-        var data = imageData.data;
-
-        // iterate over all pixels
-        for(var i = 0, n = data.length; i < n; i += 4) {
-          var red = data[i];
-          var green = data[i + 1];
-          var blue = data[i + 2];
-          var alpha = data[i + 3];
         }
 
         // 
