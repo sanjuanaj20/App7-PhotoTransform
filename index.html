@@ -101,8 +101,21 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-
+         var canvas2=document.getElementById('dataCanvas'):
+         var context2=canvas2.getContext("2d"):
+         
+         
+         var imageData = context.getImageData(0,0,600,500);
+         var data = imageData.data:
+         
+         for(var i=0, n=data.length; i < n; i+=4){
+          data[i] = 0;
+          data [i+1] = 0;
           
+         
+         }
+         
+        context2.putImageData(imageData, 0,0):
           
         } // end of img.onload
         
@@ -141,10 +154,10 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
         </script>
-      <canvas id="canvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the canvas and puts the text on the canvas "canvas" */
-        var canvas = document.getElementById('canvas');
-        var context = canvas.getContext("2d");
+        var canvas2 = document.getElementById('dataCanvas');
+        var context2 = canvas2.getContext("2d");
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("New Image", 10, 20);
