@@ -42,8 +42,7 @@
  <script>
   var docMod = document.lastModified; // gets last modified date and time of the index.html file
   console.log("This file last modified  " + docMod); // displays last modified date and time in the javascipt browser console 
-
-/* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
+  console.log("This message will be displayed on the Javascript debugging console");/* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
 */
  function detectVerticalSquash(img) {
   var iw = img.naturalWidth, ih = img.naturalHeight;
@@ -101,27 +100,28 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-         var canvas2 = document.getElementById('dataCanvas');
-         var context2 = canvas2.getContext("2d");
+                 var canvas2=document.getElementById('dataCanvas'); 
+        var context2=canvas2.getContext("2d"); 
          
          
-         var imageData = context.getImageData (0,0,600,500);
-         var data = imageData.data;
-         
-         for(var i=0, n=data.length; i ‹ n; i+=4){
-           data [i] = 0;
-           data [i+1] = 0;
-         }
-         
-      context2.putImageData(imageData, 0,0);
-          
-      } // end of img.onload
+        var imageData = context.getImageData (0,0, 600, 500); 
+        var data = imageData.data;
         
-      img.src = reader.result;
+         
+        for(var i=0, n=data.length; i < n; i+=4){ 
+            data [i] = 0; 
+            data [i+1] = 0; 
+        }
+         
+        context2.putImageData(imageData, 0, 0);  the red and green intensities are altered and only blue intensities will appear on the second canvas. 
+        
+        } // end of img.onload
+        
+        img.src = reader.result;
        
-      } //  end of reader.onload
+        } //  end of reader.onload
       
-      reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
     } // end of the if statement checking that file is an image
     else
     {
