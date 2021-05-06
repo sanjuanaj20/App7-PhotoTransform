@@ -42,7 +42,8 @@
  <script>
   var docMod = document.lastModified; // gets last modified date and time of the index.html file
   console.log("This file last modified  " + docMod); // displays last modified date and time in the javascipt browser console 
-  console.log("This message will be displayed on the Javascript debugging console");/* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
+
+/* detectVerticalSquash & drawImageIOSFix = are functions that are critical due to a flaw in the iPhone camera software that squishes any photos displayed on an HTML5 canvas element. https://github.com/stomita/ios-imagefile-megapixel
 */
  function detectVerticalSquash(img) {
   var iw = img.naturalWidth, ih = img.naturalHeight;
@@ -100,28 +101,15 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-                 var canvas2=document.getElementById('dataCanvas'); 
-        var context2=canvas2.getContext("2d"); 
-         
-         
-        var imageData = context.getImageData (0,0, 600, 500); 
-        var data = imageData.data;
-        
-         
-        for(var i=0, n=data.length; i < n; i+=4){ 
-            data [i] = 0; 
-            data [i+1] = 0; 
-        }
-         
-        context2.putImageData(imageData, 0, 0);  the red and green intensities are altered and only blue intensities will appear on the second canvas. 
-        
+
+          
+          
         } // end of img.onload
         
         img.src = reader.result;
-       
-        } //  end of reader.onload
+      } //  end of reader.onload
       
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     } // end of the if statement checking that file is an image
     else
     {
@@ -145,24 +133,22 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-     <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-     <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas'); //Calls a function to run on the canvas
-        var context = canvas.getContext("2d"); //Calls context
-        context.font = '20pt Times New Roman'; //Sets font of text 
-        context.fillStyle = "black"; //Sets color of text 
-        context.fillText("Original image will go here", 10, 20); //Sets the actual text that will show up in first canvas along with where on the canvas.
-     </script> <!--End of script for the first canvas-->
-
-     <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
-     <script> /* This script initiates the second canvas and puts the text on the canvas "dataCanvas" */
-        var canvas2 = document.getElementById('dataCanvas'); //Calls a function on second canvas
-        var context2 = canvas2.getContext("2d"); //Sets new context fore second canvas
-        context2.font = '20pt Times New Roman'; //Sets font of text for second canvas
-        context2.fillStyle = "black"; //Sets color of text for second canvas
-        context2.fillText("Transformed image will go here", 10, 20); 
-     </script> <!--End of script for the second canvas-->
-      
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Calibri';
+        context.fillStyle = "black";
+        context.fillText("Original image will go here", 10, 20);
+      </script>
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Calibri';
+        context.fillStyle = "black";
+        context.fillText("New Image", 200, 20);
+      </script>
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
