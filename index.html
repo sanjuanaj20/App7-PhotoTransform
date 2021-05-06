@@ -145,22 +145,24 @@
       </div>
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
-        </script>
-      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the canvas and puts the text on the canvas "canvas" */
-        var canvas2 = document.getElementById('dataCanvas');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Calibri';
-        context2.fillStyle = "black";
-        context2.fillText("New Image", 10, 20);
-      </script>
+     <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas = document.getElementById('myCanvas'); //Calls a function to run on the canvas
+        var context = canvas.getContext("2d"); //Calls context
+        context.font = '20pt Times New Roman'; //Sets font of text 
+        context.fillStyle = "black"; //Sets color of text 
+        context.fillText("Original image will go here", 10, 20); //Sets the actual text that will show up in first canvas along with where on the canvas.
+     </script> <!--End of script for the first canvas-->
+
+     <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> 
+     <script> /* This script initiates the second canvas and puts the text on the canvas "dataCanvas" */
+        var canvas2 = document.getElementById('dataCanvas'); //Calls a function on second canvas
+        var context2 = canvas2.getContext("2d"); //Sets new context fore second canvas
+        context2.font = '20pt Times New Roman'; //Sets font of text for second canvas
+        context2.fillStyle = "black"; //Sets color of text for second canvas
+        context2.fillText("Transformed image will go here", 10, 20); 
+     </script> <!--End of script for the second canvas-->
+      
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
