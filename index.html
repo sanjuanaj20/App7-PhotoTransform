@@ -108,21 +108,20 @@
          var imageData = context.getImageData(0,0,600,500);
          var data = imageData.data:
          
-         for(var i=0, n=data.length; i < n; i+=4){
-          data[i] = 0;
-          data [i+1] = 0;
-          
-         
+         for(var i=0, n=data.length; i ‹ n; i+=4){
+           data [i] = 0;
+           data [i+1] = 0;
          }
          
-        context2.putImageData(imageData, 0,0):
+         context2.putImageData(imageData, 0,0):
           
-        } // end of img.onload
-        
-        img.src = reader.result;
-      } //  end of reader.onload
+         } // end of img.onload
+       
+         img.src = reader.result;
       
-      reader.readAsDataURL(file);
+         } //  end of reader.onload
+      
+         reader.readAsDataURL(file);
     } // end of the if statement checking that file is an image
     else
     {
@@ -158,9 +157,9 @@
       <script> /* This script initiates the canvas and puts the text on the canvas "canvas" */
         var canvas2 = document.getElementById('dataCanvas');
         var context2 = canvas2.getContext("2d");
-        context.font = '20pt Calibri';
-        context.fillStyle = "black";
-        context.fillText("New Image", 10, 20);
+        context2.font = '20pt Calibri';
+        context2.fillStyle = "black";
+        context2.fillText("New Image", 10, 20);
         }
 
         // 
