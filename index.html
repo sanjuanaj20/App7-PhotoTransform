@@ -103,19 +103,20 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
 
-          var canvas2=document.getElementById('canvas2');
-          var context2=canvas2.getContext("2d");
-         
-          var imageData = context.getImageData(0,0,600,500);
-          var data = imageData.data
+          var canvas2=document.getElementById('canvas2'); //sets up canvas id of second canvas as 'canvas2'
+          var context2=canvas2.getContext("2d"); //returns drawing context onto canvas that it is called for
           
+          var imageData = context.getImageData(0,0,600,500); //sets up variable to get called for transformation
+          var data = imageData.data //get pixel data from the image on secoond canvas
+          
+          //this code transforms image to blueu sing grayscale method
           for(var i=0, n=data.length; i < n; i+=4){ 
-           
-           data[i] = 0;
-           data[i+1]=0;
+           // we want blue so this code brings down red and green intensities
+           data[i] = 0; //red intensities at 0 so they dont appear
+           data[i+1]=0; //red intensities at 0 so they dont appear
           
       }
-         context2.putImageData(imageData, 0,0);
+         context2.putImageData(imageData, 0,0); //functions will be put onto second canvas
        
       } // end of img.onload
         
